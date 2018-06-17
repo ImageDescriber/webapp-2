@@ -1,0 +1,55 @@
+<div class="list-group-item text-center">
+  <a href="{{ item.thumbnail }}" target="_blank" title="Voir l'élément Commons"><img src="{{ entity.image }}" class="img-fluid" /></a>
+</div>
+<div class="list-group-item">
+  <div class="float-right">
+    <a href="https://www.wikidata.org/wiki/Q{{ entity.qwd }}" target="_blank" title="Voir l'élément Wikidata"><img src="../../../../assets/images/wikidata-icon.png" style="max-height: 30px; max-width: 30px;" /></a>
+    <a href="{{ item.thumbnail }}" target="_blank" title="Voir l'élément Commons"><img src="../../../../assets/images/commons-icon.png" style="max-height: 30px; max-width: 30px;" /></a>
+  </div>
+  <p>{{ itemService.getProperty(item, 'descriptions', 'fr', false) }}</p>
+  <!--<span *ngIf="entity.url.length > 0"><span *ngIf="$first == false"> - </span><a *ngFor="let url of entity.url" href="{{ url.value }}" target="_blank">Site institutionnel</a></span>-->
+</div>
+<div class="list-group-item" *ngIf="item.P170.length > 0">
+  <dl class="row">
+    <dt class="col-md-5 text-right">Auteur</dt>
+    <dd class="col-md-7"><span *ngFor="let creator of item.P170"><br *ngIf="first == false" /><a href="http://wikidata.org/wiki/{{ creator }}" target="_blank">{{ itemService.getProperty(itemService.getItemForLabelFromQwd(creator), 'labels', 'fr', false) }}</a></span></dd>
+  </dl>
+</div>
+<div class="list-group-item" *ngIf="item.P571.length > 0">
+  <dl class="row">
+    <dt class="col-md-5 text-right">Date de création</dt>
+    <dd class="col-md-7">
+        <span *ngFor="let date_creation of item.P571"><br *ngIf="first == false" />{{ date_creation }}
+            <!--<span *ngIf="date_creation.precision == 7" ng-bind="century(date_creation.label)+'e'"></span>
+            <span *ngIf="date_creation.precision == 8" ng-bind="decade(date_creation.label)"></span>
+            <span *ngIf="date_creation.precision == 9">{{ date_creation.date | date:'yyyy' }}</span>
+            <span *ngIf="date_creation.precision == 10">{{ date_creation.date | date:'MM-yyyy' }}</span>
+            <span *ngIf="date_creation.precision == 11">{{ date_creation.date | date:'dd-MM-yyyy' }}</span>-->
+        </span>
+    </dd>
+  </dl>
+</div>
+<div class="list-group-item" *ngIf="item.P195.length > 0">
+  <dl class="row">
+    <dt class="col-md-5 text-right">Collection</dt>
+    <dd class="col-md-7"><span *ngFor="let collection of item.P195"><br *ngIf="first == false" /><a href="http://wikidata.org/wiki/{{ collection }}" target="_blank">{{ collection }}</a></span></dd>
+  </dl>
+</div>
+<div class="list-group-item" *ngIf="item.P136.length > 0">
+  <dl class="row">
+    <dt class="col-md-5 text-right">Genre</dt>
+    <dd class="col-md-7"><span *ngFor="let genre of item.P136"><br *ngIf="first == false" /><a href="http://wikidata.org/wiki/{{ genre }}" target="_blank">{{ genre }}</a></span></dd>
+  </dl>
+</div>
+<div class="list-group-item list-group-item-warning text-center" *ngIf="item.P170.length == 0 && item.P571.length == 0 && item.P195.length == 0 && item.P136.length == 0">
+  <div class="pull-right">
+    <a href="https://www.wikidata.org/wiki/{{ item.qwd }}" target="_blank" title="Voir l'élément Wikidata"><img src="../../../../assets/images/wikidata-icon.png" style="max-height: 30px; max-width: 30px;" /></a>
+  </div>
+  <p>Aucune donnée n'existe sur cet élément, n'hésitez pas à compléter la fiche Wikidata en cliquant sur l'icône.</p>
+</div>
+<div class="list-group-item">
+  <dl class="row">
+    <dt class="col-md-5 text-right">Permalien</dt>
+    <dd class="col-md-7">{{environment.webapp}}?query={{ item.qwd }}</dd>
+  </dl>
+</div>

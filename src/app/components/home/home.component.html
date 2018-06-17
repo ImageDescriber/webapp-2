@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card card-wd mb-4">
+        <div class="card-body text-center">
+          <button class="btn btn-primary" ng-click="testEditWikidata()">test</button>
+          <a ui-sref="app.security.login" class="a-muted">Learn how to describe visual artworks</a>
+        </div>
+      </div>
+      <app-game></app-game>
+    </div>
+  </div>
+  <app-contribution [entity]="entity" [wdEntities]="wdEntities"></app-contribution>
+</div>

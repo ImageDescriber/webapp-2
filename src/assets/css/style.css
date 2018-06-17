@@ -1,0 +1,86 @@
+.bg-wd-grey {
+    background-color: #F6F6F6;
+}
+
+.bg-wd-blue {
+    background-color: #006699;
+}
+
+.btn-wd-blue {
+    background-color: #006699;
+}
+
+.badge-wd-blue {
+    background-color: #006699;
+    color: #FFF;
+}
+
+.alert-wd-blue {
+    background-color: #006699;
+    color: #FFF;
+}
+
+.progress-bar-wd-blue {
+    background-color: #006699;
+}
+
+.alert-wd-blue .alert-link {
+    color: #FFF;
+}
+
+.bg-wd-red {
+    background-color: #990000;
+}
+
+.btn-wd-red {
+    background-color: #990000;
+}
+
+.progress-bar-wd-red {
+    background-color: #990000;
+}
+
+.bg-wd-green {
+    background-color: #339966;
+}
+
+.btn-wd-green {
+    background-color: #339966;
+}
+
+.progress-bar-wd-green {
+    background-color: #339966;
+}
+
+.card-wd {
+    border-radius: 0;
+}
+
+.card-header-wd:first-child {
+    border-radius: 0;
+}
+
+.icon {
+    max-height: 50px;
+    max-width: 50px;
+}
+
+.icon-lg {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+
+a, a:hover, a:focus {
+    color: #006699;
+}
+
+.a-muted, .a-muted:hover, .a-muted:focus {
+    color: #444;
+}
+
+.btn-wd-transparency {
+    background-color: transparent;
+    border: solid 1px #CCC;
+    border-left: none;
+}

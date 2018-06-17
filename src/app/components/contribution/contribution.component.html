@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card card-wd mb-4">
+      <div class="card-header card-header-wd bg-wd-blue text-white">
+        <img src="../../../assets/images/wikidata-white.png" class="icon" alt="Logo Wikidata" />
+        <span *ngIf="itemService.getProperty(item, 'labels', 'fr', true) !== null">{{ itemService.getProperty(item, 'labels', 'fr', false) }}</span>
+        <span *ngIf="itemService.getProperty(item, 'labels', 'fr', true) === null">Cet élément ne possède pas de titre, n'hésitez pas à compléter la fiche en cliquant sur l'icône Wikidata.</span>
+      </div>
+      <div class="list-group list-group-flush">
+        <app-contribution-item [entity]="entity" [item]="item"></app-contribution-item>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card card-wd">
+      <div class="card-header card-header-wd bg-wd-red text-white">
+        <img src="../../../assets/images/wikidata-white.png" class="icon" alt="Logo Wikidata" /> <span>Que voyez-vous sur cette image ?</span>
+      </div>
+      <div class="card-body">
+        <!--<app-contribution-depicts></app-contribution-depicts>-->
+      </div>
+    </div>
+  </div>
+</div>

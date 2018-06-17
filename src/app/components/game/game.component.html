@@ -1,0 +1,37 @@
+<!--<div class="card card-wd mb-4" style="font-size: 90%;">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div ng-if="user.xp.current == 0">
+          <strong i18n="game|Player is level0@@gameid1">Tu es niveau 0 !</strong><br />
+          <span i18n="game|Engagement to start contributing@@gameid2">Saisis une information pour commencer à monter dans le classement</span> <i class="fa fa-smile-o"></i>
+        </div>
+        <div ng-if="user.xp.current > 0">
+          <div><strong>Tu es niveau {{ user.level }} ! Plus que {{ user.xp.up - user.xp.current }} points avant le niveau {{ user.level+1 }}</strong></div>
+          <div class="row align-items-center">
+            <div class="col-sm-10">
+              <div class="progress">
+                <div class="progress-bar" ng-class="progressbar()" role="progressbar" aria-valuenow="{{ user.xp.current-user.xp.down }}" aria-valuemin="0" aria-valuemax="{{ user.xp.up-user.xp.down }}" style="width: {{ ((user.xp.current-user.xp.down)*100)/(user.xp.up-user.xp.down) }}%">
+                  <span class="sr-only">{{ ((user.xp.current-user.xp.down)*100)/(user.xp.up-user.xp.down) }}% Complete</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2"><i class="fa fa-chevron-right"></i> <span i18n="game|Niveau@@gameid4">Niveau {{ user.level+1 }}</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div><strong i18n="game|Position@@gameid13">Position</strong></div>
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <span ng-if="user.rank.computed == 1">Youhou ! Tu es en tête du classement !</span>
+            <span ng-if="user.rank.computed == 2">La 2ème place, la plus ingrate... Encore un petit effort pour prendre la tête !</span>
+            <span ng-if="user.rank.computed > 2 && user.rank.computed <= 5">Impressionnant, tu es dans le top 5, tu te rapproches du sommet !</span>
+            <span ng-if="user.rank.computed > 5 && user.rank.computed <= 50">Position {{ user.rank.computed }} avec {{ user.xp.current }} points - Eh bien, tu es dans le top 50, continue comme ça !</span>
+            <span ng-if="user.rank.computed > 50">Position {{ user.rank.computed }} avec {{ user.xp.current }} points</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->
